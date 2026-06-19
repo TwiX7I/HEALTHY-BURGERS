@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#075b24">
-  <meta name="description" content="Catálogo digital de comida saludable, hamburguesas de quinua, bebidas y porciones.">
-  <title>Comida Saludable | Catálogo digital</title>
+  <meta name="theme-color" content="#0f5a2a">
+  <meta name="description"
+    content="HEALTHY BURGERS, catálogo digital de comida saludable con hamburguesas, bebidas y porciones.">
+  <title>HEALTHY BURGERS | Catálogo digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -16,7 +17,38 @@
 </head>
 
 <body>
-  <nav class="mobile-nav" aria-label="Navegación del catálogo">
+  <header class="topbar">
+    <a class="topbar-brand" href="#inicio" aria-label="Ir al inicio de HEALTHY BURGERS">
+      <span class="brand-mark">
+        <svg class="brand-mark__icon" viewBox="0 0 180 180" aria-hidden="true">
+          <path class="logo-green" d="M57 34v43m-12-43v29c0 11 8 19 18 19s18-8 18-19V34M69 34v43M63 82v55" />
+          <path class="logo-orange" d="M38 89c13 38 35 55 65 49 24-5 39-23 43-51-35 17-71 19-108 2Z" />
+          <path class="logo-green fill-green" d="M102 83c12-34 34-49 53-48-1 27-15 51-47 61l-6-13Z" />
+          <path class="logo-cream" d="M106 91c17-8 30-22 40-41" />
+          <path class="logo-green fill-green" d="M65 105c-18-3-30-12-36-27 18-2 34 3 45 18l-9 9Z" />
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>HEALTHY BURGERS</strong>
+        <small>Comida saludable</small>
+      </span>
+    </a>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-nav"
+        aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="wa-shortcut js-whatsapp-general" href="#" target="_blank" rel="noopener"
+        aria-label="Pedir por WhatsApp">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación del catálogo">
     <a href="#inicio">Inicio</a>
     <a href="#hamburguesas">Hamburguesas</a>
     <a href="#bebidas">Bebidas</a>
@@ -26,12 +58,12 @@
 
   <main class="catalog">
     <section class="panel cover" id="inicio" aria-labelledby="cover-title">
-      <div class="corner-wave corner-wave--green"></div>
-      <div class="corner-wave corner-wave--orange"></div>
-      <span class="leaf-art leaf-art--top" aria-hidden="true">♧</span>
-      <span class="leaf-art leaf-art--right" aria-hidden="true">♧</span>
+      <div class="panel-deco panel-deco--green" aria-hidden="true"></div>
+      <div class="panel-deco panel-deco--orange" aria-hidden="true"></div>
+      <span class="leaf leaf--top" aria-hidden="true">❦</span>
+      <span class="leaf leaf--right" aria-hidden="true">❦</span>
 
-      <div class="cover-logo" aria-label="Logo comida saludable">
+      <div class="cover-logo" aria-label="Logo de HEALTHY BURGERS">
         <div class="logo-ring">
           <svg class="logo-mark" viewBox="0 0 180 180" role="img" aria-label="Tenedor, tazón y hoja">
             <path class="logo-green" d="M57 34v43m-12-43v29c0 11 8 19 18 19s18-8 18-19V34M69 34v43M63 82v55" />
@@ -43,32 +75,33 @@
         </div>
       </div>
 
-      <h1 id="cover-title" class="cover-title">
-        <span>Comida</span>
-        <strong>Saludable</strong>
-      </h1>
-      <p class="script subtitle">Nutrición y sabor<br><em>para una vida mejor</em> ♡</p>
+      <p class="eyebrow script">Catálogo digital</p>
+      <h1 id="cover-title" class="cover-title">HEALTHY BURGERS</h1>
+      <p class="concept-tag">Comida saludable</p>
+      <p class="subtitle script">Nutrición y sabor para una vida mejor</p>
 
       <div class="cover-benefits">
         <article>
           <span class="round-icon">🌿</span>
-          <p>Ingredientes<br>frescos y<br>naturales</p>
+          <p>Ingredientes frescos y naturales</p>
         </article>
         <article>
           <span class="round-icon round-icon--orange">♥</span>
-          <p>Nutrición<br>que te cuida</p>
+          <p>Nutrición que te cuida</p>
         </article>
         <article>
-          <span class="round-icon">♟♟</span>
-          <p>Ideal para estudiantes,<br>trabajadores<br>y familias</p>
+          <span class="round-icon">✓</span>
+          <p>Ideal para estudiantes y familias</p>
         </article>
       </div>
 
       <div class="hero-food">
-        <img src="assets/hamburguesa-quinua.png" alt="Hamburguesa saludable de quinua con vegetales">
+        <img src="assets/hamburguesa-quinua.webp" alt="Hamburguesa saludable de quinua con vegetales"
+          decoding="async" fetchpriority="high">
       </div>
+
       <div class="brush-quote cover-quote">
-        <span class="script">¡Elige saludable,<br><em>elige mejor!</em> ♡</span>
+        <span class="script">¡Elige saludable, elige mejor!</span>
       </div>
     </section>
 
@@ -77,48 +110,45 @@
         <span class="script">Nuestras</span>
         <h2 id="burgers-title">Hamburguesas</h2>
       </header>
-      <p class="script panel-intro">Hechas con ingredientes<br>nutritivos y llenas de sabor ♡</p>
+      <p class="panel-intro script">Comida saludable con sabor que se vende sola.</p>
 
       <article class="burger-card">
         <div class="product-visual">
           <span class="sprig" aria-hidden="true">🌿</span>
-          <img src="assets/hamburguesa-quinua.png" alt="Hamburguesa de quinua">
+          <img src="assets/hamburguesa-quinua.webp" alt="Hamburguesa de quinua" loading="lazy" decoding="async">
         </div>
         <div class="product-copy">
-          <h3 class="brush-label brush-label--green">Hamburguesa<br>de Quinua</h3>
+          <h3 class="brush-label brush-label--green">Hamburguesa de Quinua</h3>
           <ul>
             <li>Rica en proteínas</li>
             <li>Fuente de fibra</li>
           </ul>
           <strong class="price-tag price-tag--green">S/ 3.00</strong>
-          <button class="add-btn" data-name="Hamburguesa de Quinua" data-price="3">+ Agregar pedido</button>
+          <button class="add-btn" data-name="Hamburguesa de Quinua" data-price="3">Agregar pedido</button>
         </div>
       </article>
 
-      <div class="dashed-separator"></div>
-
       <article class="burger-card">
         <div class="product-visual">
-          <img src="assets/hamburguesa-sangrecita.png" alt="Hamburguesa de quinua con sangrecita">
+          <img src="assets/hamburguesa-sangrecita.webp" alt="Hamburguesa de quinua con sangrecita" loading="lazy"
+            decoding="async">
         </div>
         <div class="product-copy">
-          <h3 class="brush-label brush-label--orange">Hamburguesa<br>de Quinua +<br>Sangrecita</h3>
+          <h3 class="brush-label brush-label--orange">Hamburguesa de Quinua + Sangrecita</h3>
           <ul>
             <li>Alto contenido de hierro</li>
             <li>Ideal para una alimentación saludable</li>
           </ul>
           <strong class="price-tag price-tag--orange">S/ 5.00</strong>
-          <button class="add-btn add-btn--orange" data-name="Hamburguesa de Quinua + Sangrecita" data-price="5">+
-            Agregar pedido</button>
+          <button class="add-btn add-btn--orange" data-name="Hamburguesa de Quinua + Sangrecita" data-price="5">
+            Agregar pedido
+          </button>
         </div>
       </article>
 
       <a class="whatsapp-strip js-whatsapp-general" href="#" target="_blank" rel="noopener">
-        <span>☏</span> Pedir por WhatsApp
+        Pedir por WhatsApp
       </a>
-      <footer class="green-footer green-footer--burger">
-        <p class="script">Sabor que te encanta,<br>nutrición que te cuida. ♡</p>
-      </footer>
     </section>
 
     <section class="panel menu-panel" aria-label="Bebidas y porciones">
@@ -135,14 +165,16 @@
       <div class="drink-list">
         <article class="drink-row">
           <div class="drink-visual drink-sprite drink-sprite--coffee" role="img" aria-label="Taza de café"></div>
-          <div class="drink-name"><span>🌿</span>
+          <div class="drink-name">
+            <span>🌿</span>
             <h3>Café</h3>
           </div>
           <button class="mini-add add-btn" data-name="Café" data-price="1" aria-label="Agregar Café">+</button>
         </article>
         <article class="drink-row">
           <div class="drink-visual drink-sprite drink-sprite--tea" role="img" aria-label="Taza de té"></div>
-          <div class="drink-name"><span>🌿</span>
+          <div class="drink-name">
+            <span>🌿</span>
             <h3>Té</h3>
           </div>
           <button class="mini-add add-btn" data-name="Té" data-price="1" aria-label="Agregar Té">+</button>
@@ -150,7 +182,8 @@
         <article class="drink-row">
           <div class="drink-visual drink-sprite drink-sprite--chamomile" role="img" aria-label="Taza de manzanilla">
           </div>
-          <div class="drink-name"><span>🌿</span>
+          <div class="drink-name">
+            <span>🌿</span>
             <h3>Manzanilla</h3>
           </div>
           <button class="mini-add add-btn" data-name="Manzanilla" data-price="1"
@@ -158,7 +191,8 @@
         </article>
         <article class="drink-row">
           <div class="drink-visual drink-sprite drink-sprite--anis" role="img" aria-label="Taza de anís"></div>
-          <div class="drink-name"><span>🌿</span>
+          <div class="drink-name">
+            <span>🌿</span>
             <h3>Anís</h3>
           </div>
           <button class="mini-add add-btn" data-name="Anís" data-price="1" aria-label="Agregar Anís">+</button>
@@ -167,7 +201,7 @@
 
       <div id="porciones" class="anchor-target"></div>
       <header class="section-bar portions-bar">
-        <span class="section-icon">♨</span>
+        <span class="section-icon">🥗</span>
         <h2>Porciones</h2>
       </header>
       <div class="offer-row offer-row--portions">
@@ -179,71 +213,100 @@
         <article class="portion">
           <div class="portion-photo portion-photo--sweet" role="img" aria-label="Porción de camote"></div>
           <h3>Camote</h3>
-          <button class="mini-add add-btn" data-name="Porción de camote" data-price=".5"
+          <button class="mini-add add-btn" data-name="Porción de camote" data-price="0.5"
             aria-label="Agregar camote">+</button>
         </article>
         <article class="portion">
           <div class="portion-photo portion-photo--onion" role="img" aria-label="Porción de cebolla"></div>
           <h3>Cebolla</h3>
-          <button class="mini-add add-btn" data-name="Porción de cebolla" data-price=".5"
+          <button class="mini-add add-btn" data-name="Porción de cebolla" data-price="0.5"
             aria-label="Agregar cebolla">+</button>
         </article>
         <article class="portion">
           <div class="portion-photo portion-photo--salad" role="img" aria-label="Porción de ensalada"></div>
           <h3>Ensalada</h3>
-          <button class="mini-add add-btn" data-name="Porción de ensalada" data-price=".5"
+          <button class="mini-add add-btn" data-name="Porción de ensalada" data-price="0.5"
             aria-label="Agregar ensalada">+</button>
         </article>
       </div>
 
-      <p class="script change-quote">Pequeñas elecciones saludables hacen<br>grandes cambios. ♡</p>
-      <div class="orange-swoop" aria-hidden="true"></div>
+      <p class="change-quote script">Pequeñas elecciones saludables hacen grandes cambios.</p>
     </section>
 
     <section class="panel back-cover" id="contacto" aria-labelledby="why-title">
       <header class="brush-heading why-heading">
         <span class="script">¿Por qué elegir</span>
-        <h2 id="why-title">Comida saludable?</h2>
+        <h2 id="why-title">comida saludable?</h2>
       </header>
 
       <div class="benefit-list">
         <article>
-          <span class="benefit-icon">ϟ</span>
-          <p>Aporta energía para<br>estudiar y trabajar.</p>
+          <span class="benefit-icon benefit-icon--energy" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M13.4 1.8 6.2 12h4.7L9.8 22.2 17.8 10h-4.9l.5-8.2Z" />
+            </svg>
+          </span>
+          <p>Aporta energía para estudiar y trabajar.</p>
         </article>
         <article>
-          <span class="benefit-icon">♢</span>
-          <p>Fortalece el sistema<br>inmunológico.</p>
+          <span class="benefit-icon benefit-icon--shield" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2.4 5.1 5.5v5.3c0 5.1 2.8 8.7 6.9 10.8 4.1-2.1 6.9-5.7 6.9-10.8V5.5L12 2.4Z" />
+            </svg>
+          </span>
+          <p>Fortalece el sistema inmunológico.</p>
         </article>
         <article>
-          <span class="benefit-icon">♥</span>
-          <p>Ayuda a mantener<br>una buena salud.</p>
+          <span class="benefit-icon benefit-icon--heart" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 20.6s-7.2-4.6-7.2-10.3c0-2.9 2-4.9 4.4-4.9 1.6 0 2.4.8 2.8 1.5.4-.7 1.2-1.5 2.8-1.5 2.4 0 4.4 2 4.4 4.9 0 5.7-7.2 10.3-7.2 10.3Z" />
+            </svg>
+          </span>
+          <p>Ayuda a mantener una buena salud.</p>
         </article>
         <article>
-          <span class="benefit-icon">♧</span>
-          <p>Mejora el rendimiento<br>físico y mental.</p>
+          <span class="benefit-icon benefit-icon--mind" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 3.5c-2.4 0-4.4 2.1-4.4 4.6 0 1.3.5 2.4 1.2 3.2-.8.7-1.3 1.8-1.3 3 0 2.1 1.4 3.8 3.2 4.3.4 1.4 1.7 2.4 3.3 2.4.9 0 1.7-.3 2.3-.8.6.5 1.4.8 2.3.8 1.6 0 2.9-1 3.3-2.4 1.8-.5 3.2-2.2 3.2-4.3 0-1.2-.5-2.3-1.3-3 .7-.8 1.2-1.9 1.2-3.2 0-2.5-2-4.6-4.4-4.6-1.6 0-3 .9-3.7 2.2-.7-1.3-2.1-2.2-3.7-2.2Z" />
+              <path d="M12 6.2v11.6" />
+              <path d="M9.3 8.2c.7.5 1.2 1.4 1.2 2.4s-.5 1.9-1.2 2.4" />
+              <path d="M14.7 8.2c-.7.5-1.2 1.4-1.2 2.4s.5 1.9 1.2 2.4" />
+              <path d="M8.8 15.6c.8.4 1.5 1.1 1.9 2" />
+              <path d="M15.2 15.6c-.8.4-1.5 1.1-1.9 2" />
+            </svg>
+          </span>
+          <p>Mejora el rendimiento físico y mental.</p>
         </article>
       </div>
 
       <div class="brush-quote waiting">
-        <span class="script">¡Te esperamos! <em>♡</em></span>
+        <span class="script">¡Te esperamos!</span>
       </div>
-      <p class="waiting-copy">Disfruta de alimentos nutritivos,<br>deliciosos y preparados<br>especialmente para ti.</p>
+      <p class="waiting-copy">Disfruta de alimentos nutritivos, deliciosos y preparados especialmente para ti.</p>
 
-      <span class="leaf-art leaf-art--contact" aria-hidden="true">♧</span>
       <footer class="contact-block">
         <div class="contact-details">
           <p><b>●</b><span>Dirección:<br>Puente Piedra Urb, ex fundo gallinazo</span></p>
           <p><b>☎</b><span>Teléfono:<br><a href="tel:+51934025057">934 025 057</a></span></p>
-          <p><b>✉</b><span>Correo:<br><a href="mailto:healthyburgers45@gmail.com">healthyburgers45@gmail.com</a></span>
-          </p>
-          <div class="socials"><span>Síguenos en:</span><a href="#" aria-label="Facebook">f</a><a href="#"
-              aria-label="Instagram">◎</a></div>
-        </div>
-        <div class="qr-box">
-          <b>Escanea el QR</b>
-          <span>Catálogo digital</span>
-          <img id="catalog-qr" src="" alt="Código QR para abrir el catálogo digital">
+          <p><b>✉</b><span>Correo:<br><a
+                href="mailto:healthyburgers45@gmail.com">healthyburgers45@gmail.com</a></span></p>
+          <div class="socials">
+            <span>Síguenos en:</span>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.7V11H8.5v2.8h2.3V21h2.7Z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3Zm0 1.7A3.1 3.1 0 0 0 4.7 7.8v8.4a3.1 3.1 0 0 0 3.1 3.1h8.4a3.1 3.1 0 0 0 3.1-3.1V7.8a3.1 3.1 0 0 0-3.1-3.1H7.8Zm8.9 1.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.1A4.9 4.9 0 1 1 7.1 12 4.9 4.9 0 0 1 12 7.1Zm0 1.7A3.2 3.2 0 1 0 15.2 12 3.2 3.2 0 0 0 12 8.8Z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </footer>
     </section>
@@ -256,6 +319,7 @@
   </button>
 
   <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-handle" aria-hidden="true"></div>
     <div class="cart-head">
       <div>
         <small>Tu selección</small>
@@ -274,8 +338,8 @@
       <button id="send-whatsapp" type="button">Enviar pedido por WhatsApp</button>
     </div>
   </aside>
-  <div class="cart-overlay" id="cart-overlay"></div>
 
+  <div class="cart-overlay" id="cart-overlay"></div>
   <div class="toast" id="toast" role="status" aria-live="polite">Producto agregado</div>
 
   <script src="script.js"></script>

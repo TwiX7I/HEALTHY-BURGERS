@@ -1,6 +1,9 @@
 const WHATSAPP_NUMBER = "51934025057";
 
 const cart = new Map();
+const body = document.body;
+const mobileNav = document.querySelector("#mobile-nav");
+const menuToggle = document.querySelector("#menu-toggle");
 const cartPanel = document.querySelector("#cart-panel");
 const cartOverlay = document.querySelector("#cart-overlay");
 const cartToggle = document.querySelector("#cart-toggle");
@@ -9,15 +12,23 @@ const cartItems = document.querySelector("#cart-items");
 const cartCount = document.querySelector("#cart-count");
 const cartTotal = document.querySelector("#cart-total");
 const toast = document.querySelector("#toast");
+const sendWhatsAppButton = document.querySelector("#send-whatsapp");
+const generalWhatsAppLinks = document.querySelectorAll(".js-whatsapp-general");
 
 const money = (value) => `S/ ${value.toFixed(2)}`;
+
+function toggleMenu(forceOpen) {
+  const nextState = typeof forceOpen === "boolean" ? forceOpen : !mobileNav.classList.contains("is-open");
+  mobileNav.classList.toggle("is-open", nextState);
+  menuToggle.setAttribute("aria-expanded", String(nextState));
+}
 
 function openCart() {
   cartPanel.classList.add("open");
   cartOverlay.classList.add("show");
   cartPanel.setAttribute("aria-hidden", "false");
   cartToggle.setAttribute("aria-expanded", "true");
-  document.body.style.overflow = "hidden";
+  body.style.overflow = "hidden";
 }
 
 function closeCart() {
@@ -25,7 +36,7 @@ function closeCart() {
   cartOverlay.classList.remove("show");
   cartPanel.setAttribute("aria-hidden", "true");
   cartToggle.setAttribute("aria-expanded", "false");
-  document.body.style.overflow = "";
+  body.style.overflow = "";
 }
 
 function showToast(productName) {
@@ -36,11 +47,11 @@ function showToast(productName) {
 }
 
 function addProduct(name, price) {
-  const product = cart.get(name);
+  const currentProduct = cart.get(name);
   cart.set(name, {
     name,
     price,
-    quantity: product ? product.quantity + 1 : 1
+    quantity: currentProduct ? currentProduct.quantity + 1 : 1
   });
   renderCart();
   showToast(name);
@@ -49,8 +60,13 @@ function addProduct(name, price) {
 function changeQuantity(name, amount) {
   const product = cart.get(name);
   if (!product) return;
+
   product.quantity += amount;
-  if (product.quantity <= 0) cart.delete(name);
+
+  if (product.quantity <= 0) {
+    cart.delete(name);
+  }
+
   renderCart();
 }
 
@@ -68,17 +84,22 @@ function getSummary() {
   };
 }
 
+function renderEmptyCart() {
+  cartItems.innerHTML = `
+    <div class="empty-cart">
+      <span>🥬</span>
+      <p>Tu pedido está vacío.<br>Agrega algo delicioso.</p>
+    </div>
+  `;
+}
+
 function renderCart() {
   const { products, count, total } = getSummary();
-  cartCount.textContent = count;
+  cartCount.textContent = String(count);
   cartTotal.textContent = money(total);
 
   if (!products.length) {
-    cartItems.innerHTML = `
-      <div class="empty-cart">
-        <span>🥬</span>
-        <p>Tu pedido está vacío.<br>Agrega algo delicioso.</p>
-      </div>`;
+    renderEmptyCart();
     return;
   }
 
@@ -101,20 +122,22 @@ function renderCart() {
 
 function buildWhatsAppMessage() {
   const { products, total } = getSummary();
+
   if (!products.length) {
-    return "¡Hola! Quisiera conocer más sobre su catálogo de comida saludable.";
+    return "Hola, quiero hacer un pedido en HEALTHY BURGERS.";
   }
 
-  const lines = products.map((item) =>
-    `• ${item.quantity} x ${item.name} — ${money(item.quantity * item.price)}`
-  );
+  const lines = products.map((item) => {
+    const subtotal = item.price * item.quantity;
+    return `- ${item.name} | Cantidad: ${item.quantity} | Subtotal: ${money(subtotal)}`;
+  });
 
   return [
-    "¡Hola! 👋 Quiero realizar el siguiente pedido:",
+    "Hola, quiero hacer un pedido en HEALTHY BURGERS:",
     "",
     ...lines,
     "",
-    `*Total: ${money(total)}*`,
+    `Total: ${money(total)}`,
     "",
     "Quiero confirmar mi pedido."
   ].join("\n");
@@ -134,17 +157,26 @@ document.querySelectorAll(".add-btn").forEach((button) => {
 cartItems.addEventListener("click", (event) => {
   const button = event.target.closest("[data-action]");
   if (!button) return;
+
   const { action, product } = button.dataset;
+
   if (action === "increase") changeQuantity(product, 1);
   if (action === "decrease") changeQuantity(product, -1);
   if (action === "remove") removeProduct(product);
 });
 
+menuToggle.addEventListener("click", () => toggleMenu());
+
+mobileNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => toggleMenu(false));
+});
+
 cartToggle.addEventListener("click", openCart);
 cartClose.addEventListener("click", closeCart);
 cartOverlay.addEventListener("click", closeCart);
-document.querySelector("#send-whatsapp").addEventListener("click", openWhatsApp);
-document.querySelectorAll(".js-whatsapp-general").forEach((link) => {
+sendWhatsAppButton.addEventListener("click", openWhatsApp);
+
+generalWhatsAppLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     openWhatsApp();
@@ -152,13 +184,16 @@ document.querySelectorAll(".js-whatsapp-general").forEach((link) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeCart();
+  if (event.key === "Escape") {
+    toggleMenu(false);
+    closeCart();
+  }
 });
 
-const qrImage = document.querySelector("#catalog-qr");
-const catalogUrl = window.location.protocol === "file:"
-  ? "https://tu-catalogo.netlify.app"
-  : window.location.href.split("#")[0];
-qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=5&data=${encodeURIComponent(catalogUrl)}`;
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1100) {
+    toggleMenu(false);
+  }
+});
 
 renderCart();
