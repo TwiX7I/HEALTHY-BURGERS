@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#075b24">
+  <meta name="description" content="Catálogo digital de comida saludable, hamburguesas de quinua, bebidas y porciones.">
+  <title>Comida Saludable | Catálogo digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="mobile-nav" aria-label="Navegación del catálogo">
+    <a href="#inicio">Inicio</a>
+    <a href="#hamburguesas">Hamburguesas</a>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#porciones">Porciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main class="catalog">
+    <section class="panel cover" id="inicio" aria-labelledby="cover-title">
+      <div class="corner-wave corner-wave--green"></div>
+      <div class="corner-wave corner-wave--orange"></div>
+      <span class="leaf-art leaf-art--top" aria-hidden="true">♧</span>
+      <span class="leaf-art leaf-art--right" aria-hidden="true">♧</span>
+
+      <div class="cover-logo" aria-label="Logo comida saludable">
+        <div class="logo-ring">
+          <svg class="logo-mark" viewBox="0 0 180 180" role="img" aria-label="Tenedor, tazón y hoja">
+            <path class="logo-green" d="M57 34v43m-12-43v29c0 11 8 19 18 19s18-8 18-19V34M69 34v43M63 82v55" />
+            <path class="logo-orange" d="M38 89c13 38 35 55 65 49 24-5 39-23 43-51-35 17-71 19-108 2Z" />
+            <path class="logo-green fill-green" d="M102 83c12-34 34-49 53-48-1 27-15 51-47 61l-6-13Z" />
+            <path class="logo-cream" d="M106 91c17-8 30-22 40-41" />
+            <path class="logo-green fill-green" d="M65 105c-18-3-30-12-36-27 18-2 34 3 45 18l-9 9Z" />
+          </svg>
+        </div>
+      </div>
+
+      <h1 id="cover-title" class="cover-title">
+        <span>Comida</span>
+        <strong>Saludable</strong>
+      </h1>
+      <p class="script subtitle">Nutrición y sabor<br><em>para una vida mejor</em> ♡</p>
+
+      <div class="cover-benefits">
+        <article>
+          <span class="round-icon">🌿</span>
+          <p>Ingredientes<br>frescos y<br>naturales</p>
+        </article>
+        <article>
+          <span class="round-icon round-icon--orange">♥</span>
+          <p>Nutrición<br>que te cuida</p>
+        </article>
+        <article>
+          <span class="round-icon">♟♟</span>
+          <p>Ideal para estudiantes,<br>trabajadores<br>y familias</p>
+        </article>
+      </div>
+
+      <div class="hero-food">
+        <img src="assets/hamburguesa-quinua.png" alt="Hamburguesa saludable de quinua con vegetales">
+      </div>
+      <div class="brush-quote cover-quote">
+        <span class="script">¡Elige saludable,<br><em>elige mejor!</em> ♡</span>
+      </div>
+    </section>
+
+    <section class="panel burgers" id="hamburguesas" aria-labelledby="burgers-title">
+      <header class="brush-heading">
+        <span class="script">Nuestras</span>
+        <h2 id="burgers-title">Hamburguesas</h2>
+      </header>
+      <p class="script panel-intro">Hechas con ingredientes<br>nutritivos y llenas de sabor ♡</p>
+
+      <article class="burger-card">
+        <div class="product-visual">
+          <span class="sprig" aria-hidden="true">🌿</span>
+          <img src="assets/hamburguesa-quinua.png" alt="Hamburguesa de quinua">
+        </div>
+        <div class="product-copy">
+          <h3 class="brush-label brush-label--green">Hamburguesa<br>de Quinua</h3>
+          <ul>
+            <li>Rica en proteínas</li>
+            <li>Fuente de fibra</li>
+          </ul>
+          <strong class="price-tag price-tag--green">S/ 3.00</strong>
+          <button class="add-btn" data-name="Hamburguesa de Quinua" data-price="3">+ Agregar pedido</button>
+        </div>
+      </article>
+
+      <div class="dashed-separator"></div>
+
+      <article class="burger-card">
+        <div class="product-visual">
+          <img src="assets/hamburguesa-sangrecita.png" alt="Hamburguesa de quinua con sangrecita">
+        </div>
+        <div class="product-copy">
+          <h3 class="brush-label brush-label--orange">Hamburguesa<br>de Quinua +<br>Sangrecita</h3>
+          <ul>
+            <li>Alto contenido de hierro</li>
+            <li>Ideal para una alimentación saludable</li>
+          </ul>
+          <strong class="price-tag price-tag--orange">S/ 5.00</strong>
+          <button class="add-btn add-btn--orange" data-name="Hamburguesa de Quinua + Sangrecita" data-price="5">+ Agregar pedido</button>
+        </div>
+      </article>
+
+      <a class="whatsapp-strip js-whatsapp-general" href="#" target="_blank" rel="noopener">
+        <span>☏</span> Pedir por WhatsApp
+      </a>
+      <footer class="green-footer green-footer--burger">
+        <p class="script">Sabor que te encanta,<br>nutrición que te cuida. ♡</p>
+      </footer>
+    </section>
+
+    <section class="panel menu-panel" aria-label="Bebidas y porciones">
+      <div id="bebidas" class="anchor-target"></div>
+      <header class="section-bar">
+        <span class="section-icon">☕</span>
+        <h2>Bebidas</h2>
+      </header>
+      <div class="offer-row">
+        <span class="script">Todas nuestras bebidas a solo</span>
+        <strong>S/ 1.00</strong>
+      </div>
+
+      <div class="drink-list">
+        <article class="drink-row">
+          <div class="drink-visual drink-sprite drink-sprite--coffee" role="img" aria-label="Taza de café"></div>
+          <div class="drink-name"><span>🌿</span><h3>Café</h3></div>
+          <button class="mini-add add-btn" data-name="Café" data-price="1" aria-label="Agregar Café">+</button>
+        </article>
+        <article class="drink-row">
+          <div class="drink-visual drink-sprite drink-sprite--tea" role="img" aria-label="Taza de té"></div>
+          <div class="drink-name"><span>🌿</span><h3>Té</h3></div>
+          <button class="mini-add add-btn" data-name="Té" data-price="1" aria-label="Agregar Té">+</button>
+        </article>
+        <article class="drink-row">
+          <div class="drink-visual drink-sprite drink-sprite--chamomile" role="img" aria-label="Taza de manzanilla"></div>
+          <div class="drink-name"><span>🌿</span><h3>Manzanilla</h3></div>
+          <button class="mini-add add-btn" data-name="Manzanilla" data-price="1" aria-label="Agregar Manzanilla">+</button>
+        </article>
+        <article class="drink-row">
+          <div class="drink-visual drink-sprite drink-sprite--anis" role="img" aria-label="Taza de anís"></div>
+          <div class="drink-name"><span>🌿</span><h3>Anís</h3></div>
+          <button class="mini-add add-btn" data-name="Anís" data-price="1" aria-label="Agregar Anís">+</button>
+        </article>
+      </div>
+
+      <div id="porciones" class="anchor-target"></div>
+      <header class="section-bar portions-bar">
+        <span class="section-icon">♨</span>
+        <h2>Porciones</h2>
+      </header>
+      <div class="offer-row offer-row--portions">
+        <span class="script">Todas las porciones a solo</span>
+        <strong>S/ 0.50</strong>
+      </div>
+
+      <div class="portion-list">
+        <article class="portion">
+          <div class="portion-photo portion-photo--sweet" role="img" aria-label="Porción de camote"></div>
+          <h3>Camote</h3>
+          <button class="mini-add add-btn" data-name="Porción de camote" data-price=".5" aria-label="Agregar camote">+</button>
+        </article>
+        <article class="portion">
+          <div class="portion-photo portion-photo--onion" role="img" aria-label="Porción de cebolla"></div>
+          <h3>Cebolla</h3>
+          <button class="mini-add add-btn" data-name="Porción de cebolla" data-price=".5" aria-label="Agregar cebolla">+</button>
+        </article>
+        <article class="portion">
+          <div class="portion-photo portion-photo--salad" role="img" aria-label="Porción de ensalada"></div>
+          <h3>Ensalada</h3>
+          <button class="mini-add add-btn" data-name="Porción de ensalada" data-price=".5" aria-label="Agregar ensalada">+</button>
+        </article>
+      </div>
+
+      <p class="script change-quote">Pequeñas elecciones saludables hacen<br>grandes cambios. ♡</p>
+      <div class="orange-swoop" aria-hidden="true"></div>
+    </section>
+
+    <section class="panel back-cover" id="contacto" aria-labelledby="why-title">
+      <header class="brush-heading why-heading">
+        <span class="script">¿Por qué elegir</span>
+        <h2 id="why-title">Comida saludable?</h2>
+      </header>
+
+      <div class="benefit-list">
+        <article>
+          <span class="benefit-icon">ϟ</span>
+          <p>Aporta energía para<br>estudiar y trabajar.</p>
+        </article>
+        <article>
+          <span class="benefit-icon">♢</span>
+          <p>Fortalece el sistema<br>inmunológico.</p>
+        </article>
+        <article>
+          <span class="benefit-icon">♥</span>
+          <p>Ayuda a mantener<br>una buena salud.</p>
+        </article>
+        <article>
+          <span class="benefit-icon">♧</span>
+          <p>Mejora el rendimiento<br>físico y mental.</p>
+        </article>
+      </div>
+
+      <div class="brush-quote waiting">
+        <span class="script">¡Te esperamos! <em>♡</em></span>
+      </div>
+      <p class="waiting-copy">Disfruta de alimentos nutritivos,<br>deliciosos y preparados<br>especialmente para ti.</p>
+
+      <span class="leaf-art leaf-art--contact" aria-hidden="true">♧</span>
+      <footer class="contact-block">
+        <div class="contact-details">
+          <p><b>●</b><span>Dirección:<br>Tu dirección aquí</span></p>
+          <p><b>☎</b><span>Teléfono:<br><a href="tel:+51999123456">999 123 456</a></span></p>
+          <p><b>✉</b><span>Correo:<br><a href="mailto:comidasaludable@gmail.com">comidasaludable@gmail.com</a></span></p>
+          <div class="socials"><span>Síguenos en:</span><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a></div>
+        </div>
+        <div class="qr-box">
+          <b>Escanea el QR</b>
+          <span>Catálogo digital</span>
+          <img id="catalog-qr" src="" alt="Código QR para abrir el catálogo digital">
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <button class="cart-fab" id="cart-toggle" type="button" aria-label="Abrir carrito" aria-controls="cart-panel" aria-expanded="false">
+    <span>🛒</span>
+    <b id="cart-count">0</b>
+  </button>
+
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-head">
+      <div>
+        <small>Tu selección</small>
+        <h2>Mi pedido</h2>
+      </div>
+      <button id="cart-close" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="empty-cart">
+        <span>🥬</span>
+        <p>Tu pedido está vacío.<br>Agrega algo delicioso.</p>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <div><span>Total</span><strong id="cart-total">S/ 0.00</strong></div>
+      <button id="send-whatsapp" type="button">Enviar pedido por WhatsApp</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Producto agregado</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
