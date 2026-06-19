@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top, rgba(245, 135, 31, 0.18), transparent 28%),
     linear-gradient(180deg, #efe1c8 0%, #e7dbc6 100%);
@@ -32,6 +33,7 @@ html {
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
   color: var(--ink);
   font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
   background:
@@ -108,6 +110,7 @@ a {
 .topbar-brand {
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
   gap: 12px;
   min-width: 0;
   color: white;
@@ -140,6 +143,7 @@ a {
   font-size: 1.15rem;
   line-height: 0.95;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .brand-copy small {
@@ -221,6 +225,7 @@ a {
   width: min(100%, 520px);
   margin: 0 auto;
   padding: 16px 14px 112px;
+  overflow: clip;
 }
 
 .panel {
@@ -395,6 +400,7 @@ a {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.1;
+  text-wrap: balance;
 }
 
 .hero-food {
@@ -818,6 +824,7 @@ a {
 
 .portion h3 {
   font-size: 1.2rem;
+  line-height: 1;
 }
 
 .portion .mini-add {
@@ -1189,6 +1196,212 @@ a {
   background: linear-gradient(135deg, #25d366, #16823d);
   font-size: 1.08rem;
   font-weight: 800;
+}
+
+@media (max-width: 430px) {
+  :root {
+    --topbar-height: 68px;
+  }
+
+  .topbar {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-copy strong {
+    font-size: 1rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.74rem;
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
+
+  .wa-shortcut {
+    padding: 0 12px;
+    font-size: 0.86rem;
+  }
+
+  .catalog {
+    padding: 12px 10px 104px;
+  }
+
+  .panel {
+    border-radius: 26px;
+  }
+
+  .cover,
+  .burgers,
+  .menu-panel,
+  .back-cover {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cover-logo {
+    width: 126px;
+    margin-top: 18px;
+  }
+
+  .cover-title {
+    font-size: clamp(2.2rem, 12vw, 3rem);
+  }
+
+  .subtitle {
+    font-size: 1.18rem;
+  }
+
+  .cover-benefits {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cover-benefits article {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .cover-benefits p {
+    font-size: 0.9rem;
+  }
+
+  .hero-food {
+    width: 100%;
+    margin: 0;
+    padding: 14px 8px 8px;
+  }
+
+  .brush-heading h2,
+  .section-bar h2 {
+    font-size: 1.9rem;
+  }
+
+  .panel-intro,
+  .change-quote,
+  .waiting-copy {
+    font-size: 1rem;
+  }
+
+  .burger-card {
+    padding: 14px;
+  }
+
+  .product-visual {
+    min-height: 184px;
+    padding: 12px;
+  }
+
+  .product-visual img {
+    width: min(100%, 220px);
+  }
+
+  .brush-label {
+    font-size: 1.25rem;
+  }
+
+  .product-copy li {
+    font-size: 0.96rem;
+  }
+
+  .price-tag {
+    font-size: 1.35rem;
+  }
+
+  .add-btn {
+    min-height: 50px;
+    font-size: 0.96rem;
+  }
+
+  .drink-row {
+    grid-template-columns: 72px 1fr auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .drink-visual {
+    height: 72px;
+  }
+
+  .drink-name h3 {
+    font-size: 1.35rem;
+  }
+
+  .offer-row {
+    padding: 10px 12px;
+  }
+
+  .offer-row span {
+    font-size: 1rem;
+  }
+
+  .offer-row strong {
+    min-width: 78px;
+    min-height: 48px;
+    font-size: 1.15rem;
+  }
+
+  .portion-list {
+    gap: 10px;
+  }
+
+  .portion h3 {
+    font-size: 1rem;
+  }
+
+  .portion .mini-add {
+    right: -4px;
+    bottom: 34px;
+    width: 42px;
+    min-height: 42px;
+  }
+
+  .benefit-list article {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .benefit-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .benefit-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact-block {
+    padding: 18px 14px;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+
+  .cart-fab {
+    right: 12px;
+    bottom: 12px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .toast {
+    bottom: 84px;
+    width: calc(100% - 24px);
+    text-align: center;
+  }
 }
 
 .toast {
