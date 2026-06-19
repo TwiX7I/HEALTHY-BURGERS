@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "51999123456";
+const WHATSAPP_NUMBER = "51914992356";
 
 const cart = new Map();
 const cartPanel = document.querySelector("#cart-panel");
